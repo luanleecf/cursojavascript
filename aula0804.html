@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação com Javascript</title>
+
+</head>
+
+<body>
+    <h1>Curso de programação em Javascript</h1>
+
+
+
+    <script>
+        //funcoes com callback
+
+        function dizOla(praquem, cb) {
+            if (typeof cb === 'function') {
+                return cb(praquem)
+            }
+            return console.log('ola', praquem)
+        }
+
+        function boaNoite(praquem) {
+            console.log('boa noite', praquem);
+        }
+
+        function boaTarde(praquem) {
+            console.log('boa tarde', praquem)
+        }
+
+        dizOla('maria');
+        dizOla('daniel', boaNoite);
+        dizOla('luan', boaTarde);
+        dizOla('ana', function (who) {
+            console.log('bom dia', who)
+        })
+
+
+    </script>
+
+</body>
+
+</html>

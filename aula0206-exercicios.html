@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação com Javascript</title>
+
+</head>
+
+<body>
+    <h1>Curso de programação em Javascript</h1>
+
+
+    <script>
+
+        var num1 = parseInt(prompt("Competidor 1 informe um número:"))
+
+        var num2 = parseInt(prompt("Competidor 2 informe um número:"))
+
+        if (num1 == num2) {
+            alert("Vocês empataram!");
+
+        } else {
+            var aleatorio = parseInt(Math.random() * 2);
+            alert("Numero aleatorio escolhido: " + aleatorio);
+            alert("Se numero sorteador for 0, ganha quem escolheu o menor número!");
+            alert("Se numero sorteador for 1, ganha quem escolheu o maior número!");
+            if (aleatorio == 0) {
+                if (num1 < num2) {
+                    alert("Ganhou o competidor 1.");
+                } else {
+                    alert("Ganhou o competidor 2.")
+                }
+
+            } else {
+                if (num1 > num2) {
+                    alert("Ganhou o jogador 1");
+                } else {
+                    alert("Ganhou o competidor 2.");
+                }
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

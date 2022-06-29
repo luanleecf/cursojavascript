@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação com Javascript</title>
+
+</head>
+
+<body>
+    <h1>Curso de programação em Javascript</h1>
+
+    <button onclick="numero()">+</button>
+    <button onclick="menos()">-</button>
+    <button onclick="vezes()">*</button>
+    <button onclick="divide()">/</button>
+    <div id="number">Numero</div>
+
+    <script>
+        var num = parseInt(prompt("Informe um número: "));
+
+        var number = document.querySelector('#number');
+        number.innerHTML = num;
+
+        function numero() {
+            var numeros = parseInt(prompt("número? "));
+            num += numeros;
+            number.innerHTML = num;
+            console.log(num);
+        }
+        function menos() {
+            var numeros = parseInt(prompt("número? "));
+            num -= numeros;
+            number.innerHTML = num;
+            console.log(num);
+        }
+        function vezes() {
+            var numeros = parseInt(prompt("número? "));
+            num *= numeros;
+            number.innerHTML = num;
+            console.log(num);
+        }
+        function divide() {
+            var numeros = parseInt(prompt("número? "));
+            num /= numeros;
+            number.innerHTML = num;
+            console.log(num);
+        }
+
+        function limparNumeros() {
+            numeros = '';
+        }
+
+
+    </script>
+
+</body>
+
+</html>

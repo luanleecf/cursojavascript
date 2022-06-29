@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação com Javascript</title>
+
+</head>
+
+<body>
+    <h1>Curso de programação em Javascript</h1>
+
+
+
+    <script>
+        //fibonacci
+        //1 1 2 3 5 8 13
+
+        var chamou1 = 0;
+        var chamou2 = 0;
+        var chamou3 = 0;
+        function fibonacci(n) {
+            chamou1++;
+            var a = 1;
+            var b = 0;
+            var temp;
+
+            while (n--) {
+                temp = a;
+                a = a + b;
+                b = temp;
+            }
+            return b;
+        }
+        // 1 1 2 3 5 8
+        console.log(fibonacci(3)) //2
+        console.log(fibonacci(6)) //8
+        console.log('chamou1 ' + chamou1)
+
+        //usando recursividade
+        function fibonacci2(n) {
+            chamou2++;
+            if (n <= 2) return 1;
+            return fibonacci2(n - 1) + fibonacci2(n - 2);
+        }
+
+        console.log('---------')
+        console.log(fibonacci2(3)) //2
+        console.log(fibonacci2(6)) //8
+        console.log('chamou2 ' + chamou2)
+
+
+        function fibonacci3(n, cache){
+        chamou3++;
+        cache = cache || {};
+        if (cache[n]) return cache[n];
+        if (n <= 2) return 1;
+            return  cache[n] = fibonacci3(n - 1, cache) + fibonacci3(n - 2, cache);
+        }
+        console.log('---------')
+        console.log(fibonacci3(30)) 
+        console.log(fibonacci3(60)) 
+        console.log('chamou3 ' + chamou3)
+
+    </script>
+
+</body>
+
+</html>

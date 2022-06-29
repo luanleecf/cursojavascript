@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação com Javascript</title>
+
+</head>
+
+<body>
+    <h1>Curso de programação em Javascript</h1>
+
+    <div id="output"></div>
+    <div id="teste"></div>
+
+
+    <script>
+
+
+        function Endereco(dados) {
+            this.logradouro = dados.logradouro || '';
+            this.n = dados.n || 0;
+            this.complemento = dados.complemento;
+            this.estado = dados.estado;
+            this.cep = dados.cep;
+
+        }
+
+        var alunos = [
+            { nome: 'daniel', id: 112233, endereco: new Endereco({ logradouro: 'Rua fulana de tal', n: 2, complemento: null, cidade: '', estado: 'SP', cep: '12348135' }) },
+            { nome: 'jose', id: 112244, endereco: new Endereco({ logradouro: 'Rua beltrana', n: 5, complemento: 'ap 3', cidade: '', estado: 'RJ', cep: '12348125' }) },
+            { nome: 'luan', id: 113344, endereco: new Endereco({ logradouro: 'Rua sei la 2', n: 8, complemento: 'casa A', cidade: '', estado: 'MG', cep: '26087135' }) },
+            { nome: 'maria', id: 114444, endereco: new Endereco({ logradouro: 'Rua sei la 3', n: 10, complemento: null, cidade: '', estado: 'RJ', cep: '12348155' }) },
+            { nome: 'ana', id: 114555, endereco: new Endereco({ logradouro: 'Rua sei la 4', n: 250, complemento: null, cidade: '', estado: 'GO', cep: '12348145' }) },
+        ]
+
+        var enderecos = [];
+        for (var i = 0; i < alunos.length; i++) {
+            enderecos[i] = alunos[i].endereco;
+        }
+        console.log(enderecos)
+
+        
+    </script>
+
+</body>
+
+</html>

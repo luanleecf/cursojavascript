@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação com Javascript</title>
+
+</head>
+
+<body>
+    <h1>Curso de programação em Javascript</h1>
+    <div id="output"></div>
+
+
+    <script>
+        var output = document.querySelector('#output');
+
+        var produto1 = new Object();
+        produto1.nome = 'caneta';
+        produto1.preco = 2.2;
+        produto1.estoque = 10;
+
+        var msg = '';
+
+        msg += 'nome: ' + produto1.nome + '<br>';
+        msg += 'preco: ' + produto1.preco + '<br>';
+        msg += 'estoque: ' + produto1.estoque + '<br>';
+
+        produto1.comprar = function (quantidade) {
+            if (!quantidade) {
+                quantidade = 1;
+            }
+            this.estoque = this.estoque - quantidade;
+            console.log("comprou " + this.nome)
+            console.log(this.estoque)
+        }
+
+        output.innerHTML = msg;
+
+
+    </script>
+
+</body>
+
+</html>

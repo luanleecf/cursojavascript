@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação com Javascript</title>
+
+</head>
+
+<body>
+    <h1>Curso de programação em Javascript</h1>
+
+    <button onclick="iniciarCalculo('+')">+</button>
+    <button onclick="iniciarCalculo('-')">-</button>
+    <button onclick="iniciarCalculo('*')">*</button>
+    <button onclick="iniciarCalculo('/')">/</button>
+    <div id="number">Numero</div>
+
+    <script>
+        var num = prompt("Informe um número: ");
+        num = parseFloat(num);
+        console.log(num);
+        processa(num);
+
+        function processa(mensagem) {
+            var number = document.querySelector('#number');
+            number.innerHTML = mensagem;
+        }
+
+        function iniciarCalculo(simbolo) {
+            var n1 = document.querySelector('#number').textContent;
+            n1 = parseFloat(n1);
+            var n2 = prompt('Digite outro número: ');
+            n2 = parseFloat(n2);
+
+            var msg = calcular(simbolo, n1, n2);
+
+            processa(msg);
+        }
+
+        function calcular(simbolo, num1, num2) {
+            var numeroCalculado = null;
+
+            switch (simbolo) {
+                case '+':
+                    numeroCalculado = num1 + num2;
+                    break;
+                case '-':
+                    numeroCalculado = num1 - num2;
+                    break;
+                case '*':
+                    numeroCalculado = num1 * num2;
+                    break;
+                case '/':
+                    numeroCalculado = num1 / num2;
+                    break;
+            }
+            return numeroCalculado;
+        }
+
+    </script>
+
+</body>
+
+</html>

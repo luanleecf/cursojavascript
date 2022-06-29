@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação com Javascript</title>
+
+</head>
+
+<body>
+    <h1>Curso de programação em Javascript</h1>
+    <button onclick="mostrarAreaAlert()">mostrar área em um alert</button>
+    <button onclick="mostrarAreaOutput()">mostrar área em um no output</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        // var output = document.querySelector('#output');
+
+        function mostrarAreaAlert() {
+            var largura = parseFloat(prompt("Digite a largura: "));
+            var altura = parseFloat(prompt("Digite a altura: "));
+            try {
+                var area = calcularArea(largura, altura);
+            } catch (e) {
+                area = e;
+            }
+
+            alert('a área total é: ' + area);
+
+        }
+
+        function mostrarAreaOutput() {
+            var largura = parseFloat(prompt("Digite a largura: "));
+            var altura = parseFloat(prompt("Digite a altura: "));
+
+            try {
+                var area = calcularArea(largura, altura);
+            } catch (e) {
+                area = e;
+            }
+
+            document.querySelector('#output').innerHTML = 'a área total é: ' + area;
+        }
+
+        mostrarAreaAlert();
+
+        function calcularArea(l, a) {
+            if (l === undefined || a === undefined) {
+                throw new Error('calcularArea precisa receber dois números');
+            }
+            if (isNaN(l) || isNaN(a)) {
+                throw new Error('apenas números')
+            }
+            return l * a;
+        }
+
+    </script>
+
+</body>
+
+</html>

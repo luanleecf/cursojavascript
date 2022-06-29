@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação com Javascript</title>
+
+</head>
+
+<body>
+    <h1>Curso de programação em Javascript</h1>
+
+
+    <script>
+
+        //pedir para um usuário digitar um numero
+        var num1 = prompt("Digite um número?")
+        num1 = parseFloat(num1);
+        // var n1 = parseFloat(prompt("Digite um numero?")); outra formad e fazer
+
+        var num2 = prompt("Digite um número?")
+        num2 = parseFloat(num2);
+
+        var media = (num1 + num2) / 2;
+
+        // alert(media > 5);
+
+        if (media > 5 && num1 > 0 && num2 > 0 ) {
+            alert("Parabéns, sua média é a cima do esperado!");
+
+        } else {
+            alert("Sua média precisa melhorar!");
+        }
+
+
+    </script>
+
+</body>
+
+</html>
